@@ -9,6 +9,7 @@
 /*   Updated: 2022/11/20 20:39:15 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "get_next_line.h"
 
 //estas dos funciones son para buscar el /n y cortan, esta busca el /n
 char	*ft_searchchar(const char *s, char c)
