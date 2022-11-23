@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:46:16 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/22 19:15:33 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:10:54 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -67,11 +67,10 @@ char	delete_line(const char *line)
 
 
 	count = 0;
-//	if(line = '\n')
-//	Ciao\nCome va;
 	while (line[count] != '\n')
 		count++;
 	line = ft_substr(line, (count + 1), (line - count);// start es dodne cortas y la longitud es desde el punto donde ha encontrado \n mas uno porque queremos que lo pase
+	//aqui hay que hacer que lo elmine
 }
 // (ns como incorporar la statica con la linia menos y mandarla otra vez a la segunda para que cuando compilen otra vez muestra la segunda linea)
 // Hay que hacer algo para que cuando se acaban las lineas el buffer vuelva a coger mas cosas

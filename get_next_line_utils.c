@@ -6,12 +6,12 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:48:02 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/22 19:15:33 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:10:51 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-//estas dos funciones son para buscar el /n y cortan, esta busca el /n
+// funcion para busca el /n --> hay que ver odnde llamamos esta funcion, creo que en readandsave
 char	*ft_searchchar(const char *s, char c)
 {
 	int	count;
@@ -60,7 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size_s2;
 
 	count = 0;
-	if (!s1)
+	if (!s1)// esto me huele un poco peste, hay que revisarlo
 		s1 = "";
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
@@ -70,9 +70,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (count++ < size_s1)
 		snew[count - 1] = s1[count - 1];
 	count = 0;
-	while (count++ < size_s2)
+	while (count <= size_s2)// problema solucionado (creo)
+	{
+		count++;
 		snew[size_s1 + count - 1] = s2[count - 1];
-	snew [size_s1 + count - 1] = '\0';
+	}
 	return (snew);
 }
 
