@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:48:02 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/23 13:10:51 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:27:32 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -67,7 +67,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	snew = (char *)malloc (sizeof(char) * (size_s1 + size_s2 + 1));
 	if (snew == NULL)
 		return (NULL);
-	while (count++ < size_s1)
+	while (count++ <= size_s1)
 		snew[count - 1] = s1[count - 1];
 	count = 0;
 	while (count <= size_s2)// problema solucionado (creo)

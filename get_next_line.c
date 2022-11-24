@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:46:16 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/23 13:10:54 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:27:32 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -50,6 +50,7 @@ int	 *readandsave(int fd, BUFFER_SIZE)//ns que meter aqui la verdad, y ni siquie
 		line = ft_strjoin(buffer, line);
 		return (line);
 	}
+	ft_searchchar(line,'\n');
 	line = delete_line(line) // no estoy segura de si igualalrlo o no
 // Otra funcion que muestre la primera linia cuando lo ejecutes 1a vez
 char *get_next_Line(int fd)
