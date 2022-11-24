@@ -32,34 +32,36 @@ char	*get_next_line(int fd)
 }
 
 // Una funcion que lea y guarde la info (con una estatica) y que este el buffer tambien (delimitar lineas)
-int	 *readandsave(int fd, BUFFER_SIZE)//ns que meter aqui la verdad, y ni siquiera estoy seguira de lo otro
+char	 *readandsave(int fd)//ns que meter aqui la verdad, y ni siquiera estoy seguira de lo otro
 {
-	static char	*line;
+	//static char	*line;
 	char		*buffer;
-	int		read_bytes;
+	int		read_bytes; //esta variable sirve para guardar el nº de bytes y cosicas
 
 	buffer = malloc(sizeof(char)*(BUFFER_SIZE + 1));
-	buffer = \0 // si no ponems esto da segmentation fault
-	read_bytes = read(fd, buffer, BUFFER_SIZE) // el archivo, la variable (que almacena el texto), el tamano
-	if (read_bytes == 0)
-		return (NULL);
-	if (read_bytes == -1)
-		return (NULL);
-	while (read_bytes != '\n' || read_bytes != 0 || read_bytes != -1)
+	buffer[0] = '\0'; // si no ponems esto da segmentation fault
+	while (ft_searchchar(fd, '\n') != NULL)
 	{
+		read_bytes = read(fd, buffer, BUFFER_SIZE) // el archivo, la variable (que almacena el texto), el tamano
+		if (read_bytes == 0)
+			return (NULL);
+		if (read_bytes == -1)
+			return (NULL);
 		line = ft_strjoin(buffer, line);
-		return (line);
 	}
-	ft_searchchar(line,'\n');
-	line = delete_line(line) // no estoy segura de si igualalrlo o no
+	return (line);
+	 	
 // Otra funcion que muestre la primera linia cuando lo ejecutes 1a vez
+// El get next line lo puedo usar para llamar a otras funciones y puede que para printear las frases pero bueno, esta por ver
 char *get_next_Line(int fd)
 {
-	static int line; //aqui tiene que haber las lineas
-	char buffer[] //a ver, por ahora se que el tamano me lo dan (BUFFER_SIZE) asi que ns que hacer con eso
+	static char	*line; 
 
-	line = get_next_line_utils(line, buffer)  //ns muy bien que pasar aqui
-	printf("%c",line) 
+	line = readandsave(fd, BUFFER_SIZE);
+	ft_searchchar(line, '\n');
+	printf("%c",line) // que printee hasta la linea , quizas es mejor mandarlo a cortar, pero creo eso viene despues para cuando elimines eso
+	delete_line(line);
+	
 }
 // Otra funcion que te limpie la estatica de la linea que acabas de mostrar y devuela la statca sin la linea
 char	delete_line(const char *line)

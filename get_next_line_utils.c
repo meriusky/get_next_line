@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-// funcion para busca el /n --> hay que ver odnde llamamos esta funcion, creo que en readandsave
+// funcion para busca el /n //pero tiene que decir en que posicion esta o algo
 char	*ft_searchchar(const char *s, char c)
 {
 	int	count;
@@ -25,7 +25,7 @@ char	*ft_searchchar(const char *s, char c)
 		return ((char *)&s[count]);
 	return (NULL);
 }
-// la funcion que corta es esta
+// la funcion que corta 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	count;
@@ -51,7 +51,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	result[count2] = '\0';
 	return (result);
 }
-//deberas copiar tammbien la info del buffer a la static asi que usa la strjoin para eso, aunque se tiene que modificar pq en la original si no hay nada te da NULL, y al princiio en la static no habra nada.
+//Hay que copiar la info del buffer a la statica, pa eso esta.
  char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*snew;
@@ -60,7 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size_s2;
 
 	count = 0;
-	if (!s1)// esto me huele un poco peste, hay que revisarlo
+	if (!s1)
 		s1 = "";
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
@@ -70,7 +70,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (count++ <= size_s1)
 		snew[count - 1] = s1[count - 1];
 	count = 0;
-	while (count <= size_s2)// problema solucionado (creo)
+	while (count <= size_s2)
 	{
 		count++;
 		snew[size_s1 + count - 1] = s2[count - 1];
@@ -89,3 +89,8 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
+//funcion que muestre una linea, quizas no es necesario pero aqui se queda 
+//char *show_line()
+//{
+//	ññ
+//}
