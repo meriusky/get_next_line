@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:46:16 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/24 17:27:32 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:53:07 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -32,9 +32,8 @@ char	*get_next_line(int fd)
 }
 
 // Una funcion que lea y guarde la info (con una estatica) y que este el buffer tambien (delimitar lineas)
-char	 *readandsave(int fd)//ns que meter aqui la verdad, y ni siquiera estoy seguira de lo otro
+char	 *readandsave(int fd, char *line)
 {
-	//static char	*line;
 	char		*buffer;
 	int		read_bytes; //esta variable sirve para guardar el nº de bytes y cosicas
 
@@ -51,14 +50,13 @@ char	 *readandsave(int fd)//ns que meter aqui la verdad, y ni siquiera estoy seg
 	}
 	return (line);
 	 	
-// Otra funcion que muestre la primera linia cuando lo ejecutes 1a vez
 // El get next line lo puedo usar para llamar a otras funciones y puede que para printear las frases pero bueno, esta por ver
 char *get_next_Line(int fd)
 {
 	static char	*line; 
 
 	line = readandsave(fd, BUFFER_SIZE);
-	ft_searchchar(line, '\n');
+	// aqui deberia haber algo que te devuelva la linea que vas a printear, o de alguna manera hacerlo
 	printf("%c",line) // que printee hasta la linea , quizas es mejor mandarlo a cortar, pero creo eso viene despues para cuando elimines eso
 	delete_line(line);
 	
@@ -67,7 +65,6 @@ char *get_next_Line(int fd)
 char	delete_line(const char *line)
 {
 	int count;
-
 
 	count = 0;
 	while (line[count] != '\n')
