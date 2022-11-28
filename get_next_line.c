@@ -35,7 +35,7 @@ char	*show_newline(char *line)
 char	*readandsave(int fd, char *line)
 {
 	char	*buffer;
-	int		read_bytes; //esta variable sirve para guardar el nº de bytes y cosicas
+	int	read_bytes; //esta variable sirve para guardar el nº de bytes y cosicas
 
 	buffer =  malloc(sizeof(char)*(BUFFER_SIZE + 1));
 	buffer[0] = '\0'; // si no ponems esto da segmentation fault
@@ -48,6 +48,7 @@ char	*readandsave(int fd, char *line)
 			return (NULL);
 		line = strjoin(line, buffer);
 	}
+	free (buffer);
 	return (line);
 }
 // Otra funcion que te limpie la estatica de la linea que acabas de mostrar y devuela la statca sin la linea
