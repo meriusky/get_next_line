@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:48:02 by mehernan          #+#    #+#             */
-/*   Updated: 2022/11/27 21:19:30 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/12/03 00:37:25 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -87,8 +87,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-//funcion que muestre una linea, quizas no es necesario pero aqui se queda 
-//char *show_line()
-//{
-//	ññ
-//}
