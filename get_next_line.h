@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:47:36 by mehernan          #+#    #+#             */
-/*   Updated: 2022/12/02 22:44:24 by mehernan         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:40:20 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-char	*searchchar(const char *s, char c);
+char	*search_char(const char *s, char c);
 char	*cutstr(char const *s, unsigned int start, size_t len);
 char	*strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);

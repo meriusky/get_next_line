@@ -11,16 +11,17 @@ int main()
 	line = get_next_line(fd);
 	printf("%s", line);
 	free(line);
+	printf("\n");
 	line = get_next_line(fd);
 	printf("%s", line);
 	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
+//	line = get_next_line(fd);
+//	printf("%s", line);
+//	free(line);
+//	line = get_next_line(fd);
+//	printf("%s", line);
+//	free(line);
+//	line = get_next_line(fd);
+//	printf("%s", line);
 	return(0);
 }
